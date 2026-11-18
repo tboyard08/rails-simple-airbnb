@@ -1,0 +1,30 @@
+<div id="<%= dom_id flat %>">
+  <div class="col-md-4">
+    <div class="flat-card">
+      <div class="flat-card-image" style="background-image: url('https://www.google.com/imgres?q=Light%20%26%20Spacious%20Garden%20Flat&imgurl=https%3A%2F%2Fwww.thenordroom.com%2Fwp-content%2Fuploads%2F2025%2F03%2Flight-bedroom-round-mirror-yellow-bedspread.jpg&imgrefurl=https%3A%2F%2Fwww.thenordroom.com%2Flight-spacious-apartment-cozy-social-kitchen%2F&docid=7jLYC-rK1FcJpM&tbnid=oXIEBXJ1XfyL_M&vet=12ahUKEwjo-azFt5KYAxWGjIkEHbZIIqwQnPAOegQILRAA..i&w=1200&h=800&hcb=2&itg=1&ved=2ahUKEwjo-azFt5KYAxWGjIkEHbZIIqwQnPAOegQILRAA')"></div>
+      <div class="flat-card-content">
+        <div class="flat-card-title">
+          <h4><%= flat.name %></h4>
+        </div>
+        <p><%= flat.address %></p>
+        <div class="flex">
+          <div class="flex">
+            <span><b> Number of guests:</b> <%= flat.number_of_guests %></span>
+          </div>
+          <div class="flex ms-3">
+            <span><b>Price per night</b> $<%= flat.price_per_night %></span>
+          </div>
+        </div>
+      </div>
+      <div class="flat-card-actions">
+        <%= link_to "More info", flat %>
+
+        <%= link_to "Edit this flat", edit_flat_path(flat), class: "ms-3 text-warning" %>
+        <%= link_to "Destroy this flat", flat,
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+        class: "ms-3 text-danger" %>
+      </div>
+    </div>
+  </div>
+
+</div>
